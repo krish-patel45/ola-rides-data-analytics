@@ -1,0 +1,11 @@
+use ola;
+select * from bookings where booking_status="success";
+select Vehicle_Type , avg(Ride_Distance) as avg_distance from bookings group by Vehicle_Type;
+select count(*) from bookings where Booking_Status="Canceled by Customer";
+select Customer_ID,count(Booking_ID) as total_rides from bookings group by Customer_ID order by total_rides desc limit 5;
+SELECT COUNT(*) FROM bookings WHERE cancelled_Rides_by_Driver = 'Personal & Car related issue';
+SELECT MAX(Driver_Ratings) as max_rating, MIN(Driver_Ratings) as min_rating FROM bookings WHERE Vehicle_Type = 'Prime Sedan';
+select * from bookings where Payment_Method="UPI";
+select Vehicle_Type ,avg(Customer_Rating) from bookings group by Vehicle_Type;
+SELECT SUM(Booking_Value) as total_successful_value FROM bookings WHERE Booking_Status = 'Success'; 
+SELECT Booking_ID, Incomplete_Rides_Reason FROM bookings WHERE Incomplete_Rides ='Yes';
